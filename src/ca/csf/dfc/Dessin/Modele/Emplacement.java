@@ -9,9 +9,9 @@ package ca.csf.dfc.Dessin.Modele;
  */
 public class Emplacement {
 
-	  public int m_x;
+	  public int m_X;
 
-	  public int m_y;
+	  public int m_Y;
 
 	  
 
