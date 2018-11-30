@@ -12,47 +12,46 @@ import java.awt.Color;
  */
 public abstract class FormeGeometrique extends FormeGraphique {
 
-	private Color m_CouleurContour;
+	
 	private Color m_CouleurRemplissage;
-	private int m_Epaisseur;
-	private Emplacement m_emplacement;
+	private int m_ValX;
+	private int m_ValY;
+	private int m_Largeur;
+	private int m_Hauteur;
+/**
+ * Constructeur d<initialisation
+ * @param p_CouleurContour
+ * @param p_Epaisseur
+ * @param p_Emplacement
+ * @param p_CouleurRemplissage
+ */
+	public FormeGeometrique(Color p_CouleurContour, int p_Epaisseur, Emplacement p_Emplacement, 
+			Color p_CouleurRemplissage, int p_ValX, int p_ValY,
+			int p_Largeur, int p_Hauteur) {
+		super(p_CouleurContour, p_Epaisseur, p_Emplacement);
+		this.m_CouleurRemplissage=p_CouleurRemplissage;
+		this.m_ValX=p_ValX;
+		this.m_ValY=p_ValY;
+		this.m_Hauteur=p_Hauteur;
+		this.m_Largeur=p_Hauteur;
+	}
+	
+	//abstract void dessiner(Color p_CouleurContour, Color p_CouleurRemplissage);
 
-	public FormeGeometrique() {
-		// TODO Auto-generated constructor stub
-	}
-	
-	abstract void dessiner(Color p_CouleurContour, Color p_CouleurRemplissage);
-	
-	public Color get_CouleurContour() {
-		return this.m_CouleurContour;
-	}
-	
-	public void setCouleurContour(Color p_Couleur) {
-		this.m_CouleurContour = p_Couleur;
-	}
-	
+	/**
+	 * 
+	 * @return la couleur de remplissage de la forme
+	 */
 	public Color getCouleurRempplissage() {
 		return this.m_CouleurRemplissage;
 	}
-	
+	/**
+	 * fixe la couleur de remplissage de la forme
+	 * @param p_Couleur
+	 */
 	public void setCouleurRemplissage(Color p_Couleur) {
 		this.m_CouleurRemplissage = p_Couleur;
 	}
-	
-	public int getEpaisseur() {
-		return this.m_Epaisseur;
-	}
-	
-	public void setEpaisseur(int p_Epaisseur) {
-		this.m_Epaisseur = p_Epaisseur;
-	}
-	
-	public Emplacement getEmplacement() {
-		return this.m_emplacement;
-	}
-	
-	public void setEmplacement(	int p_X, int p_Y) {
-		this.m_emplacement.setX(p_X);
-		this.m_emplacement.setY(p_Y);
-	}
+
 }
+
